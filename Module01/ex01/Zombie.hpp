@@ -1,5 +1,4 @@
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#pragma once
 
 # include <iostream>
 
@@ -16,5 +15,3 @@ public:
 };
 
 Zombie	*zombieHorde( int N, std::string name );
-
-#endif
