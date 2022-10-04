@@ -1,11 +1,11 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void)
+PhoneBook::PhoneBook( void )
 {
 	size = 0;
 }
 
-void	PhoneBook::add_contact(void)
+void	PhoneBook::add_contact( void )
 {
 	size %= 8;
 	for (int i = 0; i < 5; i+=0)
@@ -24,25 +24,21 @@ void	PhoneBook::add_contact(void)
 	size++;
 }
 
-void	PhoneBook::auto_p(void)
-{
-	std::string	temp[5];
+// void	PhoneBook::auto_p( void )
+// {
+// 	std::string	temp[5];
 
-	size = 5;
-	temp[0] = "12345678912";
-	temp[1] = "987654321";
-	temp[2] = "1234567890";
-	temp[3] = "44444";
-	temp[4] = "55555";
+// 	size = 8;
+// 	temp[0] = "12345678912";
+// 	temp[1] = "987654321";
+// 	temp[2] = "1234567890";
+// 	temp[3] = "44444";
+// 	temp[4] = "55555";
 
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < 5; j++)
-		{
-			contact[i].set_info(temp[j], j);
-		}
-	}
-}
+// 	for (int i = 0; i < size; i++)
+// 		for (int j = 0; j < 5; j++)
+// 			contact[i].set_info(temp[j], j);
+// }
 
 void	PhoneBook::print_val(std::string str)
 {
@@ -53,11 +49,11 @@ void	PhoneBook::print_val(std::string str)
 	std::cout << "|";
 }
 
-void	PhoneBook::list_contacts(void)
+void	PhoneBook::list_contacts( void )
 {
 	std::cout << "|-------------------------------------------|" << std::endl;
 	std::cout << "|     Index|First name| Last name|  Nickname|" << std::endl;
-	for (int j = 0; contact[j].get_person(0) != ""; j++)
+	for (int j = 0; j < 8 && contact[j].get_person(0) != ""; j++)
 	{
 		std::cout << "|";
 		print_val(std::to_string(j + 1));
@@ -68,7 +64,7 @@ void	PhoneBook::list_contacts(void)
 	std::cout << "|-------------------------------------------|" << std::endl;
 }
 
-void	PhoneBook::search_contact(void)
+void	PhoneBook::search_contact( void )
 {
 	if (size == 0)
 	{

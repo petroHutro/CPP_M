@@ -9,10 +9,7 @@ int	work(PhoneBook *book)
 	if (comand == "add")
 		book->add_contact();
 	else if (comand == "search")
-	{
-		// book->auto_p();
 		book->search_contact();
-	}
 	else if (comand == "exit")
 	{
 		std::cout << "exit" << std::endl;

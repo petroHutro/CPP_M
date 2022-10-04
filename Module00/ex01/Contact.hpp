@@ -1,12 +1,12 @@
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
+#pragma once
 
-#include "library.hpp"
+#include <iostream>
+#include <string>
 
 class Contact
 {
 private:
-	// ﬁrst name, last name, nickname, phone number, anddarkest secret.
+	// ﬁrst name, last name, nickname, phone number and darkest secret.
 	std::string person[5];
 	std::string fields[5];
 
@@ -17,5 +17,3 @@ public:
 	std::string	get_fields(int i);
 	std::string	get_person(int i);
 };
-
-#endif
