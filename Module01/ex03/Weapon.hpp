@@ -1,5 +1,4 @@
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#pragma once
 
 # include <iostream>
 
@@ -10,9 +9,8 @@ private:
 public:
 	Weapon( std::string type );
 	Weapon( void );
-	// ~Weapon( void );
-	std::string	*getType( void );
+	~Weapon( void );
+
+	const std::string	&getType( void ) const;
 	void		setType( std::string new_type);
 };
-
-#endif

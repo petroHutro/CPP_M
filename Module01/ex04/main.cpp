@@ -4,9 +4,9 @@
 std::string	ft_replace(std::string str, std::string s1, std::string s2)
 {
 	int			size_s1 = s1.size();
-	int			index;
+	size_t		index;
 
-	while ((index = str.find(s1)) != -1)
+	while ((index = str.find(s1)) != std::string::npos)
 	{
 		str = str.insert(index + size_s1, s2);
 		str = str.erase(index, size_s1);
@@ -27,6 +27,7 @@ void	file_replace(std::string file, std::string s1, std::string s2)
 		return ;
 	out.open((file + ".replace").c_str());
 	if (out.is_open())
+	{
 		while (getline(in, line))
 		{
 			if (!in.eof())
@@ -34,8 +35,9 @@ void	file_replace(std::string file, std::string s1, std::string s2)
 			else
 				out << ft_replace(line, s1, s2);
 		}
+		out.close();
+	}
 	in.close();
-	out.close();
 }
 
 int	main(int argc, char **argv)
