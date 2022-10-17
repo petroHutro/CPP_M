@@ -21,6 +21,5 @@ bool	bsp( Point const a, Point const b, Point const c, Point const point )
 	std::cout << "b=" << rez_2 << std::endl;
 	std::cout << "c=" << rez_3 << std::endl;
 
-
 	return ((rez_1 > 0 && rez_2 > 0 && rez_3 > 0) || (rez_1 < 0 && rez_2 < 0 && rez_3 < 0));
 }

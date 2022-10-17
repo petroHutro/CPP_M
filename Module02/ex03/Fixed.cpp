@@ -21,9 +21,7 @@ Fixed::Fixed( const Fixed &copy )
 }
 
 Fixed::~Fixed( void )
-{
-	// std::cout << "Destructor called" << std::endl;
-}
+{}
 
 int	Fixed::getRawBits( void ) const
 {
@@ -81,28 +79,24 @@ bool	Fixed::operator != ( const Fixed &other ) const
 	return (this->value != other.value);
 }
 
-Fixed	&Fixed::operator + ( const Fixed &other )
+Fixed	Fixed::operator + ( const Fixed &other ) const
 {
-	this->value += other.value;
-	return (*this);
+	return (Fixed(this->toFloat() + other.toFloat()));
 }
 
-Fixed	&Fixed::operator - ( const Fixed &other )
+Fixed	Fixed::operator - ( const Fixed &other ) const
 {
-	this->value -= other.value;
-	return (*this);
+	return (Fixed(this->toFloat() - other.toFloat()));
 }
 
-Fixed	&Fixed::operator * ( const Fixed &other )
+Fixed	Fixed::operator * ( const Fixed &other ) const
 {
-	this->value = roundf((this->toFloat() * other.toFloat()) * (1 << this->bits));
-	return (*this);	
+	return (Fixed(this->toFloat() * other.toFloat()));	
 }
 
-Fixed	&Fixed::operator / ( const Fixed &other )
+Fixed	Fixed::operator / ( const Fixed &other ) const
 {
-	this->value = roundf((this->toFloat() / other.toFloat()) * (1 << this->bits));
-	return (*this);
+	return (Fixed(this->toFloat() * other.toFloat()));
 }
 
 Fixed	&Fixed::operator ++ ( void )
