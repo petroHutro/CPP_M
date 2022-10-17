@@ -61,5 +61,5 @@ void	Harl::complain( std::string level )
 	default:
 		other();
 		break;
-	}	
+	}
 }
