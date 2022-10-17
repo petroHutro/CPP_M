@@ -1,11 +1,28 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( std::string	name ) : ClapTrap(name) //name(name), hit(100), energy(50), damage(20)
+ScavTrap::ScavTrap( std::string	name ) : ClapTrap(name)
 {
 	std::cout << "ScavTrap " << name << " left the factory." << std::endl;
 	this->hit = 100;
 	this->energy = 50;
 	this->damage = 20;
+}
+
+ScavTrap::ScavTrap( void ) : ClapTrap()
+{
+	std::cout << "ScavTrap " << name << " left the factory." << std::endl;
+	this->hit = 100;
+	this->energy = 50;
+	this->damage = 20;
+}
+
+ScavTrap::ScavTrap( const ScavTrap &copy ) : ClapTrap(copy)
+{}
+
+ScavTrap &ScavTrap::operator = (const ScavTrap &copy)
+{
+	ClapTrap::operator=(copy);
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()

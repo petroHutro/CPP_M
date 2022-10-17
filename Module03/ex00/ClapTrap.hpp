@@ -1,5 +1,4 @@
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#pragma once
 
 # include <iostream>
 
@@ -13,12 +12,14 @@ private:
 
 public:
 	ClapTrap( std::string name );
-	~ClapTrap();
+	ClapTrap( const ClapTrap& claptrap );
+	ClapTrap( void );
+
+	ClapTrap& operator=(const ClapTrap& claptrap);
 
 	void	attack( const std::string& target );
 	void	takeDamage( unsigned int amount );
 	void	beRepaired( unsigned int amount );
 
+	~ClapTrap( void );
 };
-
-#endif
