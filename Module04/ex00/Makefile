@@ -1,4 +1,4 @@
-NAME		=	Animel
+NAME		=	Animal
 
 SRC 		=	$(shell ls *cpp)
 OBJ			=	$(SRC:.cpp=.o)

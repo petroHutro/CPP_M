@@ -1,8 +1,20 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal( void )
+WrongAnimal::WrongAnimal( std::string type ) : type(type)
 {
 	std::cout << "Constructor WrongAnimal" << std::endl;
+}
+
+WrongAnimal::WrongAnimal( const WrongAnimal &copy )
+{
+	std::cout << "Copy WrongAnimal" << std::endl;
+	this->operator=(copy);
+}
+
+WrongAnimal& WrongAnimal::operator=( const WrongAnimal &copy )
+{
+	this->type=copy.type;
+	return (*this);
 }
 
 WrongAnimal::~WrongAnimal( void )

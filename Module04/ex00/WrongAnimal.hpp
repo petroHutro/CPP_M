@@ -1,5 +1,4 @@
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#pragma once
 
 # include <iostream>
 
@@ -9,12 +8,13 @@ protected:
 	std::string	type;
 
 public:
-	WrongAnimal( void );
-	virtual	~WrongAnimal( void );
+	WrongAnimal( std::string type = "No" );
+	WrongAnimal( const WrongAnimal &copy );
 
-	std::string	getType( void ) const;
-	void		makeSound( void ) const;
+	WrongAnimal& operator=( const WrongAnimal &copy );
 
+	std::string		getType( void ) const;
+	void	makeSound( void ) const;
+
+	~WrongAnimal( void );
 };
-
-#endif

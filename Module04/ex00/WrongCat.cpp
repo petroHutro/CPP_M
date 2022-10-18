@@ -1,12 +1,22 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat( void ) //: type("Cat")
+WrongCat::WrongCat( void ) : WrongAnimal("WrongCat")
 {
-	type = "WrongCat";
 	std::cout << "Constructor WrongCat" << std::endl;
 }
 
-WrongCat::~WrongCat()
+WrongCat::WrongCat( const WrongCat &copy ) : WrongAnimal(copy)
+{
+	std::cout << "Copy WrongCat" << std::endl;
+}
+
+WrongCat&	WrongCat::operator=( const WrongCat &copy )
+{
+	WrongAnimal::operator=(copy);
+	return (*this);
+}
+
+WrongCat::~WrongCat( void )
 {
 	std::cout << "Destructor WrongCat" << std::endl;
 }

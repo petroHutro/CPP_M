@@ -1,8 +1,20 @@
 #include "Animal.hpp"
 
-Animal::Animal( void )
+Animal::Animal( std::string type ) : type(type)
 {
 	std::cout << "Constructor Animal" << std::endl;
+}
+
+Animal::Animal( const Animal &copy )
+{
+	std::cout << "Copy Animal" << std::endl;
+	this->operator=(copy);
+}
+
+Animal& Animal::operator=( const Animal &copy )
+{
+	this->type=copy.type;
+	return (*this);
 }
 
 Animal::~Animal( void )

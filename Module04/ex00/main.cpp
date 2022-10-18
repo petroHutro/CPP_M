@@ -1,7 +1,8 @@
-// #include "Animal.hpp"
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 
 int main()
 {
@@ -11,6 +12,7 @@ int main()
 
 	std::cout << "Cat type: " << cat->getType() << " " << std::endl;
 	std::cout << "Dog type: " << dog->getType() << " " << std::endl;
+	std::cout << "Animal type: " << meta->getType() << " " << std::endl;
 	cat->makeSound();
 	dog->makeSound();
 	meta->makeSound();
@@ -26,6 +28,7 @@ int main()
 	wrongcat->makeSound();
 	wrongmeta->makeSound();
 	
+	std::cout << "WrongAnimal type: " << wrongmeta->getType() << " " << std::endl;
 	std::cout << "WrongCat type: " << wrongcat->getType() << " " << std::endl;
 
 	delete wrongcat;

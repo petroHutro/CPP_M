@@ -1,10 +1,19 @@
 #include "Cat.hpp"
 
-Cat::Cat( void ) //: type("Cat")
+Cat::Cat( void ) : Animal("Cat")
 {
 	brain = new Brain();
-	type = "Cat";
 	std::cout << "Constructor Cat" << std::endl;
+}
+
+Cat::Cat( const Cat &copy ) : Animal(copy)
+{
+	std::cout << "Copy Cat" << std::endl;
+}
+
+Cat&	Cat::operator=( const Cat &copy )
+{
+
 }
 
 Cat::~Cat( void )

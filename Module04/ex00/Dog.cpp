@@ -1,9 +1,19 @@
 #include "Dog.hpp"
 
-Dog::Dog( void ) //: type("Dog")
+Dog::Dog( void ) : Animal("Dog")
 {
-	type = "Dog";
 	std::cout << "Constructor Dog" << std::endl;
+}
+
+Dog::Dog( const Dog &copy ) : Animal(copy)
+{
+	std::cout << "Copy Dog" << std::endl;
+}
+
+Dog&	Dog::operator=( const Dog &copy )
+{
+	Animal::operator=(copy);
+	return (*this);
 }
 
 Dog::~Dog()
