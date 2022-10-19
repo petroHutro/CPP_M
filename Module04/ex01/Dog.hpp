@@ -1,5 +1,4 @@
-#ifndef DOG_HPP
-# define DOG_HPP
+#pragma once
 
 # include "Animal.hpp"
 # include "Brain.hpp"
@@ -10,9 +9,11 @@ private:
 	Brain	*brain;
 public:
 	Dog( void );
-	~Dog( void );
+	Dog( const Dog &copy );
+
+	Dog& operator=( const Dog &copy );
 
 	void	makeSound( void ) const;
-};
 
-#endif
+	~Dog( void );
+};

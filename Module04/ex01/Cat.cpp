@@ -8,12 +8,18 @@ Cat::Cat( void ) : Animal("Cat")
 
 Cat::Cat( const Cat &copy ) : Animal(copy)
 {
+	brain = NULL;
+	operator=(copy);
 	std::cout << "Copy Cat" << std::endl;
 }
 
 Cat&	Cat::operator=( const Cat &copy )
 {
-
+	if (brain)
+		delete brain;
+	brain = new Brain(*copy.brain);
+	Animal::operator=(copy);
+	return (*this);
 }
 
 Cat::~Cat( void )
