@@ -1,5 +1,4 @@
-#ifndef ANIMAl_HPP
-# define ANIMAl_HPP
+#pragma once
 
 # include <iostream>
 
@@ -9,12 +8,13 @@ protected:
 	std::string	type;
 
 public:
-	Animal( void );
-	virtual	~Animal( void ) = 0;
+	Animal( std::string type = "No" );
+	Animal( const Animal &copy );
+
+	Animal& operator=( const Animal &copy );
 
 	std::string		getType( void ) const;
 	virtual void	makeSound( void ) const = 0;
 
+	virtual	~Animal( void ) = 0;
 };
-
-#endif

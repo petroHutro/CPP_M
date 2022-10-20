@@ -1,10 +1,25 @@
 #include "Dog.hpp"
 
-Dog::Dog( void ) //: Animal("Dog")
+Dog::Dog( void ) : Animal("Dog")
 {
 	brain = new Brain();
-	type = "Dog";
 	std::cout << "Constructor Dog" << std::endl;
+}
+
+Dog::Dog( const Dog &copy ) : Animal(copy)
+{
+	brain = NULL;
+	operator=(copy);
+	std::cout << "Copy Dog" << std::endl;
+}
+
+Dog&	Dog::operator=( const Dog &copy )
+{
+	if (brain)
+		delete brain;
+	brain = new Brain(*copy.brain);
+	Animal::operator=(copy);
+	return (*this);
 }
 
 Dog::~Dog( void )

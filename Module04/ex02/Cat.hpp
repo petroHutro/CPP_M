@@ -1,5 +1,4 @@
-#ifndef CAT_HPP
-# define CAT_HPP
+#pragma once
 
 # include "Animal.hpp"
 # include "Brain.hpp"
@@ -10,9 +9,11 @@ private:
 	Brain	*brain;
 public:
 	Cat( void );
-	~Cat( void );
+	Cat( const Cat &copy );
+
+	Cat& operator=( const Cat &copy );
 
 	void	makeSound( void ) const;
-};
 
-#endif
+	~Cat( void );
+};
