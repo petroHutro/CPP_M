@@ -7,7 +7,7 @@ Zombie::Zombie( std::string name )
 
 Zombie::Zombie()
 {
-	
+	this->name = "";
 }
 
 Zombie::~Zombie()
